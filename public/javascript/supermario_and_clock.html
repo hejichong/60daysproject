@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic"/>
+<style>
+
+* {
+	margin: 0 auto;
+	padding:0;
+}
+
+body {
+	height:100%;
+}
+
+div {
+	width:900px;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Avenir Next',Helvetica,sans;
+}
+
+#color,
+#clock {
+	font-family: 'Avenir Next',Helvetica,sans;
+	font-size: 60px;
+	background:rgba(33,33,33,1);
+
+	border:solid black 2px;
+	border-radius:10px;
+	display:block;
+	margin-top:40px;
+	width:50%;
+
+}
+
+h1:hover {
+	color:#fff;
+}
+
+span:hover {
+	 
+	 background:rgba(33,33,33,0.2);
+	 color:#fff;
+    
+}
+
+
+</style>
+
+<script>
+
+function displayTime(){
+	
+	var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    
+    //add zero to the left of the numbers if they are single digits
+    if(hour <= 9) hour = '0' + hour;
+    if(minute <= 9) minute = '0' + minute;
+    if(second <=9) second = '0'+ second;
+   
+    color = "#" + hour + minute + second;
+
+    //set background color
+    document.body.style.backgroundColor = color;
+    
+    document.getElementById("clock").innerHTML = now.toLocaleTimeString();
+	
+	document.getElementById("color").innerHTML = color;
+	
+    
+
+
+	setTimeout(displayTime,1000);
+}
+
+window.onload = displayTime;
+
+</script>
+
+</head>
+<body>
+<header></header>
+<div class = "container">
+<h1>Clock</h1>
+<span id="clock"></span>
+<span id="color"></span>    
+</div>
+</body>
+
+
+
+</html>
