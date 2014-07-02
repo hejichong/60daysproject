@@ -1,0 +1,183 @@
+body {
+	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+	color:#3E3E3E;
+	background:#94C5EB url(../images/background-grad.png) repeat-x;
+	font-size:12px; 
+}
+
+#menu {
+	float:right;
+	margin-right: 50px;
+	position:relative;
+
+	}
+
+#menu ul {
+	padding: 0;
+	
+}
+
+#menu li {
+	margin: 0;
+	padding: 0;
+}
+
+#menu a {
+	display: inline-block;
+	color:#015287;
+	text-decoration: none;
+}
+
+#menu_blob {
+	top:0;
+	background-color: #c0ffee;
+	position: absolute;
+	z-index: -1;
+}
+
+
+#menu.fixed {
+	position:fixed;
+	top:0;
+	left:50%;
+	margin-left: 163px;
+}
+
+#container {
+	margin:0 auto;
+	text-align: left;
+	width:650px;
+}
+
+#header {
+	height:60px;
+    	background: transparent url(../images/header-corners.png) no-repeat bottom left;
+	color:#172322;
+}
+
+
+#header h1 {
+	padding: 0;
+	margin:0;
+}
+
+#content {
+	background-color: #fff;
+	padding:0 15px 10px 15px;
+}
+
+#footer{
+	background-color: #fff;
+	padding:15px;
+}
+
+#intro{
+	width: 450px;
+}
+
+h2 {
+	 border-bottom: 2px solid #015287;
+	 color:#D15600;
+	 padding-top:10px;
+	 margin-top:0;
+	 width:460px;
+
+ }
+
+p {
+	padding:5px;
+	width:450px;
+}
+
+table {
+	border-collapse: collapse;
+	margin:0 20px 20px 10px;
+	border-top:2px solid #015287;
+	width:450px;
+}
+
+th {
+	border-bottom: 2px solid #015287;
+	color:#D15600;
+	font-size:14px;
+	font-weight: normal;
+	text-align:left;
+	padding:3px 8px;
+}
+
+.zebraHover {
+	background-color: #FFFACD;
+}
+
+#bio {
+	margin-bottom:10px;
+	width:450px;
+}
+#bio h3{
+	margin:0;
+	padding:5px 0 5px 10px;
+	background-color: #94C5EB;
+	border-bottom: 1px solid #fff;
+	color:#00314F;
+	font-weight: normal;
+}
+
+#bio div {
+	height:120px;
+	background-color: #F4F4EE;
+	border-bottom: 1px solid #fff;
+	position: relative;
+	width:450px;
+}
+
+#bio img {
+	margin:10px;
+	background-color: #F4F4EE;
+}
+
+#bio p {
+	position: absolute;
+	left:120px;
+	top:10px;
+	margin:0 10px 0 0;
+	padding:0;
+}
+
+
+
+
+#splitter {
+	height:150px;
+	margin-top:30px;
+	margin:bottom:50px;
+}
+
+
+#splitter .pane {
+	width:50%;
+	height:100%;
+	float:left;
+}
+
+#splitter h2 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#tocPane {
+	overflow: hidden;
+	background:#d6dde5 url(../images/handle.png) no-repeat right center;
+}
+
+#tocPane .inner {
+	width:300px;
+}
+
+#contentPane {
+	overflow: auto;
+}
+
+#contentPane .inner {
+	padding:0 5px;
+}
+
