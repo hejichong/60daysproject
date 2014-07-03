@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<style>
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      padding-top:100px;
+      background:hsl(120, 40%, 40%);
+      font-family: sans-serif;
+    }
+
+    main {
+    	width:500px;
+    	margin:0 auto;
+    	padding-bottom: 10px;
+    	background:white;
+    	border-radius:3px;
+    	overflow: hidden;
+    }
+
+    .flp{
+    	padding-top: 0 50px;
+    }
+
+    h1 {
+    	font-size: 24px;
+    	font-weight: normal;
+        padding:20px;
+    	background: #eee;
+    	box-shadow: 0px 0px 3px 1px green;
+    	color:#E8A80C;
+    	margin-bottom: 40px;
+    	text-align: center;
+    }
+    
+    .flp div {position: relative; margin-bottom: 30px;}
+
+    .flp input, .flp label{
+    	
+    	width:400px;height:40px;
+        font-size: 16px;
+        line-height: 24px;
+        border-radius: 3px;
+        border:1px solid #999;
+        display:block;
+        font:inherit;
+        margin:0 auto;
+
+
+    }
+
+    .flp input {
+    	padding:10px;
+    	outline: none;
+    	border-radius: 3px;
+
+    }
+    	
+
+
+    .flp label {
+    	position:absolute;
+    	border-color: transparent; color: #666;
+    	left:0;
+    	top:0;
+    	cursor:text;
+    	padding:10px 58px;
+    }
+
+
+    .ch {
+    	display:block;
+    	float: left;
+    	position:relative;
+    	background:white;
+    }
+
+    .ch:first-child {padding-left:2px;}
+    .ch:last-child {padding-right:2px;}
+
+    .focussed {
+    	pointer-events:none;
+    }
+     
+    
+	</style>
+	
+</head>
+
+<body>
+	<main>
+		<h1>Please log in</h1>
+        <form class = "flp">
+        	<div>
+        		<input type="text" id="fname" />
+        		<label for="fname">First Name</label>
+        	</div>
+
+        	<div>
+        		<input type="email" id="email" />
+        		<label for="email">E-mail</label>
+        	</div>
+        </form>
+	</main>
+   
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script>
+$('.flp label').each(function(){
+	var sop = '<span class="ch">';
+	var scl = '</span>';
+
+	$(this).html(sop + $(this).html().split("").join(scl+sop)+scl);
+
+	$(".ch:contains(' ')").html("&nbsp;");
+	
+})
+
+var d;
+$(".flp input").focus(function(){
+	var tm = $(this).outerHeight()/2*-1+"px";
+
+	$(this).next().addClass("focussed").children().stop(true).each(function(i){
+		d = i*50;
+		$(this).delay(d).animate({top:tm},200,'easeOutBack');
+	})
+})
+
+$(".flp input").blur(function(){
+	if($(this).val()== "")
+	{
+		$(this).next().removeClass("focussed").children().stop(true).each(function(i){
+			d=i*50;
+			$(this).delay(d).animate({top:0},500,'easeInOutBack');
+		})
+	}
+})
+
+
+	</script>
+
+</body>
+
+</html>
